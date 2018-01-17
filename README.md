@@ -5,8 +5,9 @@ I used jwt to authenticate users locally.and I created sample data manually for 
 
 If you would like to download the code and try it for yourself:
 
-1. Clone the repo: `git clone git@github.com:chandankuiry/authApp`
+1. Clone the repo: `git clone git@github.com:chandankuiry/Authapp`
 2. Install packages: `npm install`
 3. Launch: `npm start`
 4. Visit in your browser at: `http://localhost:3000`
+5. checking eslint error: `npm run lint`
 
