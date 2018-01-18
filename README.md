@@ -17,7 +17,9 @@ If you would like to download the code and try it for yourself:
 # Running in browser
 Visit in your browser at: `http://localhost:3000`
 
-/login (Here I did not use any database.I passed users data manually in Users object in `server.js`)
+[/login](http://localhost:3000/login) 
+
+Here I did not use any database.I passed users data manually in Users object in [server.js](https://github.com/chandankuiry/Authapp/blob/master/server.js)
 
 Username:chandan@gmail.com
 Password: 123
@@ -62,8 +64,28 @@ app.post('/getImage', (req, res) => {
   console.log('here');
 });
 
-```
 
+```
+#Dockerfile
+I have written [dockerfile](https://github.com/chandankuiry/Authapp/blob/master/Dockerfile) for the project
+
+```
+FROM node:slim
+MAINTAINER Chandan kuiry
+
+# Create app directory
+WORKDIR /usr/src/authapp
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+CMD [ "npm", "start" ]
+
+```
 
 
 
