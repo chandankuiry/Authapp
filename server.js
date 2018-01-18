@@ -12,12 +12,7 @@ const users = [
     name: 'chandan@gmail.com',
     password: '123',
     imgURL: 'https://ichef.bbci.co.uk/news/660/cpsprodpb/37B5/production/_89716241_thinkstockphotos-523060154.jpg',
-  },
-  {
-    name: 'c@gmail.com',
-    password: '123',
-    imgURL: 'https://ichef.bbci.co.uk/news/660/cpsprodpb/37B5/production/_89716241_thinkstockphotos-523060154.jpg',
-  },
+  }
 ];
 app.use(morgan('dev')); // log every request to the console
 app.use(bodyParser.json());
