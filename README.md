@@ -12,3 +12,61 @@ If you would like to download the code and try it for yourself:
 5. checking eslint error: `npm run lint`
 6. for fixing the error:`npm run lint-fix`
 
+
+
+# Running in browser
+Visit in your browser at: `http://localhost:3000`
+
+/login (Here I did not use any database.I passed users data manually in Users object in `server.js`)
+
+Username:chandan@gmail.com
+Password: 123
+
+after ligin a token will be generated in the page 
+
+copy the ** token ** and paste in ** token ** box 
+after paste the ** token ** click on `Convert Image`
+
+you can see that one 50 px image will be generated in [convertThumbs](https://github.com/chandankuiry/Authapp/tree/master/convertThumbs) folder.
+actually we pass this [image url](https://ichef.bbci.co.uk/news/660/cpsprodpb/37B5/production/_89716241_thinkstockphotos-523060154.jpg) in token payload for thumbnail creation.
+
+#Code for convert image 
+```js
+// for convert image we use jimp package
+app.post('/getImage', (req, res) => {
+  const user_list = [];
+  // here we get the data after decoding the token
+  const DataOftoken = req.decoded;
+  // here we are getting the image url from the decoded token
+  const imgURL = DataOftoken.imgURL;
+  // now we resize the image using jimp into 50*50 pix
+  Jimp.read(imgURL, (err, img) => {
+    if (err) throw err;
+    img.resize(50, 50).getBase64(Jimp.AUTO, (e, img64) => {
+      if (e) throw e;
+      // here we getting the base64 image url in img64
+      res.send(`<img src="${img64}">`);
+      console.log('image', img64);
+      // now we convert the base64 to image file and save into convertThumbs/image.png file
+      const base64Image = img64.split(';base64,').pop();
+      fs.writeFile('convertThumbs/convertImage.png', base64Image, { encoding: 'base64' }, (err) => {
+        if (err) {
+          throw err;
+        } else {
+          console.log('file created in convertThumbs folder and save image as 50*50 pix');
+        }
+      });
+    });
+  });
+
+  console.log('here');
+});
+
+```
+
+
+
+
+
+
+

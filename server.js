@@ -95,11 +95,11 @@ app.post('/getImage', (req, res) => {
       console.log('image', img64);
       // now we convert the base64 to image file and save into convertThumbs/image.png file
       const base64Image = img64.split(';base64,').pop();
-      fs.writeFile('convertThumbs/image.png', base64Image, { encoding: 'base64' }, (err) => {
+      fs.writeFile('convertThumbs/convertImage.png', base64Image, { encoding: 'base64' }, (err) => {
         if (err) {
           throw err;
         } else {
-          console.log('file created and save image as 50*50 pix');
+          console.log('file created in convertThumbs folder and save image as 50*50 pix');
         }
       });
     });
