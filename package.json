@@ -6,7 +6,8 @@
   "scripts": {
     "codacy-coverage": "codacy-coverage",
     "cover": "istanbul cover --report lcovonly ./node_modules/.bin/_mocha -- -r ./tests/getProfile.js",
-    "lint": "eslint server.js",
+    "lint": "eslint --ext .js server.js",
+    "lint-fix":"eslint --fix --ext .js tests/ server.js",
     "nsp": "nsp check",
     "start": "node server.js",
     "test": "node_modules/mocha/bin/mocha tests"

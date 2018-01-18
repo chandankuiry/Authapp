@@ -10,4 +10,5 @@ If you would like to download the code and try it for yourself:
 3. Launch: `npm start`
 4. Visit in your browser at: `http://localhost:3000`
 5. checking eslint error: `npm run lint`
+6. for fixing the error:`npm run lint-fix`
 
