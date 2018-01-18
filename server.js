@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 });
 // login code through users data
 app.post('/login', (req, res) => {
-  const message;//eslint-disable-line use const
+  let message;//eslint-disable-line use const
   for (const user of users) {
     if (user.name != req.body.name) {
       message = 'Wrong Name';
