@@ -4,6 +4,7 @@ var bodyParser= require('body-parser');
 var jwt=require('jsonwebtoken');
 var Jimp = require("jimp");
 var fs = require("fs")
+var morgan = require('morgan');
 //data for authenticate
 var users=[
 {
@@ -17,6 +18,7 @@ var users=[
   imgURL:"https://ichef.bbci.co.uk/news/660/cpsprodpb/37B5/production/_89716241_thinkstockphotos-523060154.jpg"
 }
 ]
+app.use(morgan('dev')); // log every request to the console
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({
     extended: true

@@ -5,12 +5,11 @@
   "main": "server.js",
   "scripts": {
     "codacy-coverage": "codacy-coverage",
-    "cover": "istanbul cover --report lcovonly ./node_modules/.bin/_mocha -- -r test/support/env test",
-    "lint": "eslint server.js" ,
+    "cover": "istanbul cover --report lcovonly ./node_modules/.bin/_mocha -- -r ./tests/getProfile.js",
+    "lint": "eslint server.js",
     "nsp": "nsp check",
     "start": "node server.js",
-    "test": "mocha -bc --check-leaks -R tap -r test/support/env test",
-    "test:watch": "mocha -wbc --check-leaks -R progress -r test/support/env test"
+    "test": "node_modules/mocha/bin/mocha tests"
   },
   "keywords": [
     "auth",
@@ -22,18 +21,20 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "jimp": "^0.2.28",
-    "jsonwebtoken": "^8.1.0"
+    "jsonwebtoken": "^8.1.0",
+    "morgan": "^1.9.0"
   },
   "devDependencies": {
-    "codacy-coverage": "^1.1.3",
-    "eslint": "^2.11.0",
-    "eslint-config-airbnb-base": "^3.0.1",
-    "eslint-plugin-import": "^1.8.1",
-    "istanbul": "^0.4.3",
-    "mocha": "^2.5.3",
-    "nsp": "^2.4.0",
-    "semantic-release": "^4.3.5",
-    "supertest": "^1.1.0",
-    "supervisor": "^0.11.0"
+    "chai": "^4.1.2",
+    "codacy-coverage": "^2.0.3",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.0.0",
+    "nsp": "^3.1.0",
+    "superagent": "^3.8.2",
+    "supertest": "^3.0.0",
+    "supervisor": "^0.12.0"
   }
 }
