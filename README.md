@@ -88,6 +88,35 @@ CMD [ "npm", "start" ]
 ```
 
 
+# Docker command to run the project
+
+## to build the image from Dockerfile.We have to give the path where Dockerfile is located
+
+```
+sudo docker build -t authapp:latest /home/chandan/Desktop/authApp
+```
+## to check  the image 
+```
+sudo docker images
+``` 
+
+## to run container
+```
+sudo docker run -d -p 3000:3000  authapp
+
+```
+## to check container is running or not
+```
+sudo docker ps
+
+```
+## open in browser
+```
+http://localhost:3000
+
+```
+
+
 
 
 
